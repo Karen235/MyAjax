@@ -1,0 +1,76 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="ReceiveJson.aspx.cs" Inherits="ReceiveJson" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <script src="Script/jquery-1.11.2.js"></script>
+    <title></title>
+</head>
+<body>
+    <form id="form1" runat="server">
+
+        <input id="Button1" type="button" value="button" />
+    <div>
+    
+    </div>
+    </form>
+
+
+    <script type="text/javascript">
+        $(function () {
+
+           
+           
+
+
+            var url = "http://cloud.culture.tw/frontsite/trans/SearchShowAction.do?method=doFindAllTypeJ";
+
+            $('#Button1').click(function () {
+
+                // 1.
+            //    $.ajax({
+            //        type: "POST",
+            //        url: url + "?callback=?", //使用JSONP務必在結尾使用 GET 的 callback=?
+            //        dataType: "jsonp",
+            //        success: function (data) {
+            //            console.log(data)
+            //        },
+            //        error: function (data) {
+            //            console.log(data);
+            //        }
+
+            //    });
+
+            //2.
+                //$.getJSON(url + '&callback=?', jsonp_callback);
+
+                //3
+                $.ajax({
+                    url: url,
+                    dataType: "jsonp",
+                    jsonp: "callback",
+                    jsonpCallback: "jsonp_callback",
+                    //data: { gender: $("#gender").val(), name: $("#name").val() },
+                    error: function (xhr) {
+                        console.log("Ajax request 發生錯誤");
+                        //$("#btn").attr("disabled", false);
+                    }
+                });
+            });
+
+          
+
+            function jsonp_callback(data) {
+                console.log('ok');
+                //console.log(data);
+            }
+        })
+
+    </script>
+
+
+   
+</body>
+</html>

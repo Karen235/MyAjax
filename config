@@ -1,0 +1,10 @@
+[core]
+	bare = true
+	repositoryformatversion = 0
+	filemode = false
+	symlinks = false
+	ignorecase = true
+[remote "Practice"]
+	url = git@github.com:Karen235
+	fetch = +refs/heads/*:refs/remotes/Practice/*
+	pushurl = git@github.com:Karen235/Practice.git

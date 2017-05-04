@@ -1,0 +1,11 @@
+TDNote	運送單資料
+TDNoteA	運送單子資料 (Packing List)
+TMASE	進倉資料
+TMASEA	進倉子資料 (Packing List)
+
+
+ TMASE.ioflag進出倉狀態
+
+  TMASE.StatusFlag
+  驗貨完成:TMASEA
+  statusflag checkingdate checkingtime  checkinguseraccount
